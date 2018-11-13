@@ -40,27 +40,31 @@ public class Supuesto3 {
         }
         System.out.println("Generando nºs primos necesarios...");
         generaPrimos(numero); //Se generan los primos por los que es divisible nuestro número
-        System.out.print("Factores primos: ");
         while (numero != -1){ //El valor -1 se usará como marcador para finalizar el bucle
             numero = creaFactores(numero); //uso el método división definido más abajo
         }       
         /* 
                 La siguiente parte es para generar el texto con exponenciales
-        */               
-        String texto="";
-        long numeroActivo = -1;
-        int exponente = 0;
-        for (long num: resultado){
-            if (numeroActivo == num){
-                exponente++;
-            }else{
-                texto += (numeroActivo > -1)?generaNumero(numeroActivo, exponente) + " * ":"";
-                exponente = 1;
+        */ 
+        if (resultado.size() == 1){
+            System.out.println("El número " + resultado.get(0) + " es primo.");
+        }else{
+            System.out.print("Factores primos: ");
+            String texto="";
+            long numeroActivo = -1;
+            int exponente = 0;
+            for (long num: resultado){
+                if (numeroActivo == num){
+                    exponente++;
+                }else{
+                    texto += (numeroActivo > -1)?generaNumero(numeroActivo, exponente) + " * ":"";
+                    exponente = 1;
+                }
+                numeroActivo = num;
             }
-            numeroActivo = num;
+            texto += generaNumero(numeroActivo, exponente); //Añado el último número del bucle
+            System.out.println(texto); //Muestro el resultado
         }
-        texto += generaNumero(numeroActivo, exponente); //Añado el último número del bucle
-        System.out.println(texto); //Muestro el resultado
     }
     private static void generaPrimos(long numero){
         long contador = primos.get(primos.size() -1);
