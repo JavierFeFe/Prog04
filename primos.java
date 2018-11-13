@@ -23,7 +23,7 @@ public class Pruebas {
         primos.addAll(Arrays.asList(2, 3, 5)); //Primos básicos para empezar
         int numero = 564654654;
         int contador = primos.get(primos.size() -1);
-        while (numero > Math.pow(primos.get(primos.size() -1),2)){ //Siempre q numero sea mayor que el último primo al cuadrado
+        while (numero > Math.pow(primos.get(primos.size() -1) +2 ,2)-1){ //Siempre q numero sea mayor que el último primo + 2 al cuadrado - 1
             contador = contador + 2; //Sumando 2 evito los números pares
             String contTexto = String.valueOf(contador);
             if (contTexto.charAt(contTexto.length()-1) == '5'){ //Evito los múltiplos de 5 sin realizar operaciones matemáticas
