@@ -29,8 +29,7 @@ public class Supuesto3 {
             in = teclado.next();
             if (!in.matches("\\d*")){
                 System.out.println("¡¡" + in + " no es un formato de número válido!!");
-            }
-            else if (in.length() > 9){
+            }else if (in.length() > 9){
                 System.out.println("¡¡El número es demasiado largo!!");
             }else{
                 numero = Integer.parseInt(in);
