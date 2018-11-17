@@ -15,8 +15,6 @@ import java.util.Scanner;
  * @author Javier Fernández Ferrol
  */
 public class Supuesto3 {
-    //private static final List<Long> PRIMOS = new ArrayList<>(); //Lista de primos ordenados numéricamente
-    //private static final List<Long> FACTORES = new ArrayList<>(); //Lista de factores de nuestro número
     private static long numero = -1; //El número con el que trabajaremos
     private static final byte LONGITUD = 12; //A partir de 12 el tiempo de procesamiento se hace demasiado largo en caso de resultar ser un número primo
     public static void main (String[] args){           
@@ -53,8 +51,9 @@ public class Supuesto3 {
         }
     }
     private static List<Long> generaFactores(long numero){
-        List<Long> primos = Arrays.asList(2l, 3l, 5l, 7l); //Primos más básicos para primeras comprobaciones
-        List<Long> factores = new ArrayList<>();
+        List<Long> primos = new ArrayList<>(); //Primos más básicos para primeras comprobaciones
+        primos.addAll(Arrays.asList(2l, 3l, 5l, 7l));
+        List<Long> factores = new ArrayList<>(); 
         long ultimoPrimo = primos.get(primos.size() -1);
         for (long primo: primos){//Este bucle simplifica el nº lo máximo posible intentando factorizar entre 2, 3, 5 y 7 (los primos más básicos)
             while (numero % primo == 0){
