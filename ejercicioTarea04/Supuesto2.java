@@ -26,7 +26,7 @@ public class Supuesto2 {
         int anho = 0;
         if (!an.matches("\\d+") || an.length() > 7){  //Compruebo si el texto introducido es año con un máximo de 7 dígitos
             System.out.println("¡¡" + an + " no es un año válido!!");
-            return;
+            System.exit(0);
         }else{
             anho = Integer.parseInt(an);
             if (anho % 4 ==0){ //Si el año es divible entre 4 puede ser bisiesto
@@ -50,7 +50,7 @@ public class Supuesto2 {
         }
         if (mes == -1){
             System.out.println("¡¡" + me + " no es un formato de mes válido!!");
-            return;
+            System.exit(0);
         }
         System.out.print("El mes de " + nombre[mes] + " del año " + anho + " tiene ");
         if (!bisiesto){
