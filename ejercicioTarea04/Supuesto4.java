@@ -23,18 +23,18 @@ public class Supuesto4 {
         String nombre = teclado.next();
         if (!nombre.matches("[A-Za-zÁÉÍÓÚñáéíóúÑ]+")){ //Compruebo si el texto introducido es un número válido
             System.out.println("¡¡" + nombre + " no es nombre válido!");
-            return;
+            System.exit(0);
         }
         System.out.print("Introduce la edad: ");
         String ed = teclado.next();
         if (!ed.matches("\\d+")){
             System.out.println("¡¡" + ed + " no es un formato de edad válido!");
-            return;
+            System.exit(0);
         }
         short edad = Short.parseShort(ed);
         if (edad > 130){
             System.out.println("¡¡" + edad + " es una edad demasiado alta!");
-            return;
+            System.exit(0);
         }
         char categoria = '0';
         if (edad ==0){
