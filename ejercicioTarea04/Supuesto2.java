@@ -16,15 +16,17 @@ public class Supuesto2 {
      *
      * @param args
      */
+    private static final int DIGITOS = 7;
     public static void main (String[] args){
         Scanner teclado = new Scanner(System.in);
         System.out.print("Introduce un año: ");
         String an = teclado.next();
-        int[] meses = {31,28,31,30,31,30,31,31,30,31,30,31};
-        String[] nombre = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};
+        int[] meses = {31,28,31,30,31,30,31,31,30,31,30,31}; //Array con los días de los meses ordenados
+        String[] nombre = 
+        {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"}; //Array con los nombres de los meses
         boolean bisiesto = false;
         int anho = 0;
-        if (!an.matches("\\d+") || an.length() > 7){  //Compruebo si el texto introducido es año con un máximo de 7 dígitos
+        if (!an.matches("\\d+") || an.length() > DIGITOS){  //Compruebo si el texto introducido es año con un máximo de 7 dígitos
             System.out.println("¡¡" + an + " no es un año válido!!");
             System.exit(0);
         }else{
@@ -40,9 +42,9 @@ public class Supuesto2 {
         int mes  = -1;
         System.out.print("Introduce un mes: ");
         String me = teclado.next();
-        if (me.matches("\\d+") && Integer.parseInt(me) >0 && Integer.parseInt(me) < 13 ){
+        if (me.matches("\\d+") && Integer.parseInt(me) >0 && Integer.parseInt(me) < 13 )
             mes = Integer.parseInt(me) - 1;
-        }else{
+        else{
             for (int i=0; i < nombre.length; i++){ //Me parece más simple que mediante un switch case
                if (nombre[i].equals(me.toLowerCase()))
                    mes = i;
@@ -51,17 +53,13 @@ public class Supuesto2 {
         if (mes == -1){
             System.out.println("¡¡" + me + " no es un formato de mes válido!!");
             System.exit(0);
-        }
-        System.out.print("El mes de " + nombre[mes] + " del año " + anho + " tiene ");
-        if (!bisiesto){
+        }     
+        String b = bisiesto?"bisiesto ":"";
+        System.out.print("El mes de " + nombre[mes] + " del año " + b + anho + " tiene ");
+        if (!bisiesto || mes !=1)
             System.out.println(meses[mes] + " días.");
-        }else{
-            if (mes == 1){
-                System.out.print((meses[mes] + 1) + " días");
-            }else{
-                System.out.print(meses[mes] + " días");
-            }
-            System.out.println(" (es un año bisiesto).");
-        }
+        else
+            System.out.println((meses[mes] + 1) + " días.");
     }
 }
+
