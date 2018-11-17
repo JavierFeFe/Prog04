@@ -41,9 +41,7 @@ public class Supuesto4 {
             System.exit(0);
         }
         char categoria = '0';
-        if (edad ==0){
-            System.out.println("¡¡" + edad + " no es una edad válida!");
-        }else if (edad <= 25){
+        if (edad <= 25){
             categoria = 'A';
         }else if (edad <= 50){
             categoria = 'B';
