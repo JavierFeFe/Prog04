@@ -20,7 +20,7 @@ public class Supuesto2 {
         Scanner teclado = new Scanner(System.in);
         System.out.print("Introduce un año: ");
         String an = teclado.next();
-        int[] meses = {31,28,31,30,31,30,31,31,30,31};
+        int[] meses = {31,28,31,30,31,30,31,31,30,31,30,31};
         String[] nombre = {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};
         boolean bisiesto = false;
         int anho = 0;
