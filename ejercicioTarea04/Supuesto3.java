@@ -53,9 +53,8 @@ public class Supuesto3 {
         }
     }
     private static List<Long> generaFactores(long numero){
-        List<Long> primos = new ArrayList<>();
+        List<Long> primos = Arrays.asList(2l, 3l, 5l, 7l); //Primos más básicos para primeras comprobaciones
         List<Long> factores = new ArrayList<>();
-        primos.addAll(Arrays.asList(2l, 3l, 5l, 7l)); //Primos más básicos para primeras comprobaciones  
         long ultimoPrimo = primos.get(primos.size() -1);
         for (long primo: primos){//Este bucle simplifica el nº lo máximo posible intentando factorizar entre 2, 3, 5 y 7 (los primos más básicos)
             while (numero % primo == 0){
