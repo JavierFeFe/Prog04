@@ -31,7 +31,11 @@ public class Supuesto4 {
             System.out.println("¡¡" + ed + " no es un formato de edad válido!");
             System.exit(0);
         }
-        short edad = Short.parseShort(ed);
+        if (ed.length() > 3){
+            System.out.println("No es posible que alguien tenga " + ed + " años.");
+            System.exit(0);
+        }
+        short edad = (short)(Short.parseShort(ed) + 10);
         if (edad > 130){
             System.out.println("¡¡" + edad + " es una edad demasiado alta!");
             System.exit(0);
@@ -46,8 +50,6 @@ public class Supuesto4 {
         }else{
             categoria = 'C';
         }
-        System.out.println(nombre + " con " + edad + " años pertenecea a la categoría " + categoria);
-    
-    }
-    
+        System.out.println("Dentro de una década " + nombre + " tendrá " + edad + " años y pertenecerá a la categoría " + categoria + ".");
+    }  
 }
